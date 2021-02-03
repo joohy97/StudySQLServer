@@ -1,2 +1,2 @@
 # StudySQLServer
-SQL 서버 학습
+SQL Server 학습
