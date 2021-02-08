@@ -1,35 +1,35 @@
---DB »ı¼º
+ï»¿--DB ìƒì„±
 use tempdb;
 go
 
 create database sqlDB;
 go
 
---Å×ÀÌºí »ı¼º
+--í…Œì´ë¸” ìƒì„±
 use sqlDB;
 go
-create table userTbl -- È¸¿øÅ×ÀÌºí
+create table userTbl -- íšŒì›í…Œì´ë¸”
 (
-	userID char(8) not null primary key, --»ç¿ëÀÚ ¾ÆÀÌµğ
-	userName nvarchar(10) not null, --ÀÌ¸§ : nameÀº Å°¿öµå¶ó¼­ »ç¿ëÇÏ¸é ÁÁÁö ¾ÊÀ½.
-	birthYear int not null, --Ãâ»ı³âµµ
-	addr nchar(2) not null, --Áö¿ª(2±ÛÀÚ¸¸ ÀÔ·Â)
-	mobile1 char(3), --ÈŞ´ëÆù ±¹¹ø(010, 016 µî)
-	mobile2 char(8), --ÈŞ´ëÆù ³ª¸ÓÁö ¹øÈ£
-	height smallint, --Å°
-	mDate date --È¸¿ø °¡ÀÔÀÏ
+	userID char(8) not null primary key, --ì‚¬ìš©ì ì•„ì´ë””
+	userName nvarchar(10) not null, --ì´ë¦„ : nameì€ í‚¤ì›Œë“œë¼ì„œ ì‚¬ìš©í•˜ë©´ ì¢‹ì§€ ì•ŠìŒ.
+	birthYear int not null, --ì¶œìƒë…„ë„
+	addr nchar(2) not null, --ì§€ì—­(2ê¸€ìë§Œ ì…ë ¥)
+	mobile1 char(3), --íœ´ëŒ€í° êµ­ë²ˆ(010, 016 ë“±)
+	mobile2 char(8), --íœ´ëŒ€í° ë‚˜ë¨¸ì§€ ë²ˆí˜¸
+	height smallint, --í‚¤
+	mDate date --íšŒì› ê°€ì…ì¼
 );
 go
 
-create table buyTbl --±¸¸ÅÅ×ÀÌºí
+create table buyTbl --êµ¬ë§¤í…Œì´ë¸”
 (
-	num int identity not null primary key, --¼ø¹ø(PK)
-	userID char(8) not null --»ç¿ëÀÚ ¾ÆÀÌµğ(FK) 
-		foreign key references userTbl(userID), --FK ¼³Á¤
-	prodName nvarchar(20) not null, --¹°Ç°¸í
-	groupName nchar(4), --ºĞ·ù
-	price int not null, --´Ü°¡
-	amount smallint not null --¼ö·®
+	num int identity not null primary key, --ìˆœë²ˆ(PK)
+	userID char(8) not null --ì‚¬ìš©ì ì•„ì´ë””(FK) 
+		foreign key references userTbl(userID), --FK ì„¤ì •
+	prodName nvarchar(20) not null, --ë¬¼í’ˆëª…
+	groupName nchar(4), --ë¶„ë¥˜
+	price int not null, --ë‹¨ê°€
+	amount smallint not null --ìˆ˜ëŸ‰
 
 );
 go
