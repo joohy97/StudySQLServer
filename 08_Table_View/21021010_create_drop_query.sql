@@ -20,17 +20,19 @@ create database tableDB;
 use tableDB;
 go
 
-drop table  buyTbl, userTbl;
+drop table  buyTbl;
+drop table userTbl;
 
 create table userTbl --부모
 (
 	userID		char(8)			not null	primary key,
 	userName	nvarchar(10)	not null,	
-	birthYear	int				not null,
-	addr		nchar(2)		not null,
+	birthYear	int				not null	default year(getdate()),
+	addr		nchar(2)		not null	default '서울',
 	mobile1		char(3)			null,
 	mobile2		char(8)			null,
 	height		smallint		null,
+	email		varchar(150)	not null	unique, 
 	mDate		date			null
 );
 go
