@@ -19,18 +19,29 @@ create database tableDB;
 
 use tableDB;
 go
-create table userTbl
+
+drop table  buyTbl, userTbl;
+
+create table userTbl --부모
 (
-	userID		char(8),
-	userName	nvarchar(10),
-	birthYear	int,
-	addr		nchar(2),
-	mobile1		char(3),
-	mobile2		char(8),
-	height		smallint,
-	mDate		date
+	userID		char(8)			not null	primary key,
+	userName	nvarchar(10)	not null,	
+	birthYear	int				not null,
+	addr		nchar(2)		not null,
+	mobile1		char(3)			null,
+	mobile2		char(8)			null,
+	height		smallint		null,
+	mDate		date			null
 );
 go
-create table buyTbl
-();
+
+create table buyTbl --자식
+(
+	num			int				not null	primary key		identity(1,1), 
+	userID		char(8)			not null	foreign key references userTbl(userID),
+	prodName	nchar(6)		not null,
+	groupName	nchar(4)		null,
+	price		int				not null,
+	amount		smallint		not null
+);
 go
