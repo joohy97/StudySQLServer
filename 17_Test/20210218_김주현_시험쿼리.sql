@@ -27,7 +27,7 @@ SELECT TOP(10) CONCAT(RIGHT(names, 2), ', ', LEFT(names, 1)) AS '변경이름'
 			 , LEFT(addr, 2) AS '도시'
 			 , LOWER(email) AS '이메일'
   FROM membertbl
- ORDER BY names;
+ ORDER BY Idx;
 GO
 
 
